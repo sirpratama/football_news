@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:football_news/widgets/left_drawer.dart';
+import 'package:football_news/screens/newslist_form.dart';
 
 // Step 2: Changing the Widget Page Menu to Stateless
 class MyHomePage extends StatelessWidget {
@@ -74,6 +76,7 @@ class MyHomePage extends StatelessWidget {
           ],
         ),
       ),
+      drawer: LeftDrawer(),
     );
   }
 }
@@ -132,6 +135,14 @@ class ItemCard extends StatelessWidget {
                 content: Text("Kamu telah menekan tombol ${item.name}!"),
               ),
             );
+          if (item.name == "Add News") {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => NewsFormPage(),
+              ), // So the user can add news
+            );
+          }
         },
         child: Container(
           padding: const EdgeInsets.all(8),
