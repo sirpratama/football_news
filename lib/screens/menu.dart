@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:football_news/widgets/left_drawer.dart';
 import 'package:football_news/screens/newslist_form.dart';
+import 'package:football_news/screens/news_entry_list.dart';
 
 // Step 2: Changing the Widget Page Menu to Stateless
 class MyHomePage extends StatelessWidget {
@@ -141,6 +142,13 @@ class ItemCard extends StatelessWidget {
               MaterialPageRoute(
                 builder: (context) => NewsFormPage(),
               ), // So the user can add news
+            );
+          } else if (item.name == "See Football News") {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const NewsEntryListPage(),
+              ),
             );
           }
         },
